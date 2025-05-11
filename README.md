@@ -1,5 +1,6 @@
 # manara-platform-for-academic-guidance
 After graduating from high school, many students face confusion when it comes to choosing the right academic path. This uncertainty stems from a lack of knowledge and experience in understanding different academic disciplines, emerging fields, and career opportunities. Students need reliable and expert guidance to help them navigate their way toward selecting the most suitable major and university based on market demands, future career prospects, and their own skills.
+
 In today's rapidly evolving academic landscape, selecting the right major and university is crucial as it significantly impacts students' future careers. Manara Platform is designed to be one of the key tools that guide students toward an academic path tailored to their strengths and aligned with industry needs.
 
 https://github.com/user-attachments/assets/28bb5bf9-4f4e-4d73-8097-c0c3c54a0c68
