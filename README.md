@@ -3,6 +3,7 @@ After graduating from high school, many students face confusion when it comes to
 In today's rapidly evolving academic landscape, selecting the right major and university is crucial as it significantly impacts students' future careers. Manara Platform is designed to be one of the key tools that guide students toward an academic path tailored to their strengths and aligned with industry needs.
 
 https://github.com/user-attachments/assets/28bb5bf9-4f4e-4d73-8097-c0c3c54a0c68
+
 In Saudi Arabia, there are limited specialized advising tools available to help students make informed decisions about their academic futures. A comprehensive tool is needed to assist students in choosing the right college and university by considering various factors such as their skills, market trends, aspirations, and future opportunities. At the same time, universities require a platform where they can present detailed information about their college and analyze students' skills to match them with potential academic programs.
 Currently, students must visit numerous university websites and educational forums to gather insights into different college, which can be time-consuming and overwhelming. A centralized, specialized platform would streamline this process and provide students with a clearer path toward their future.
 
