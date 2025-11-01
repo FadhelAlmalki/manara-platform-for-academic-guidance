@@ -1,0 +1,225 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+/* Navigation Section Styling */
+.navbar {
+    background-color: #ffffff;
+    color: black;
+}
+.navbar header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+}
+.navbar .logo{
+    display:flex;
+    align-items:center;
+    font-size: 13px;
+    margin-right: 5rem;
+}
+.navbar .logo img {
+    max-width: 150px;
+    max-height: 150px;
+}
+.navbar nav .options {
+    list-style-type: none;
+    padding: 0px;
+    display:flex;
+    text-align: center;
+    gap:0.1rem;
+}
+.navbar nav .options li {
+    margin: 0 0px;
+}
+.navbar nav .options li:nth-last-child(3) {
+    margin-left: 40px;
+}
+.navbar nav .options li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.navbar nav .options li a:hover {
+    background-color: #f1b8ec;
+}
+.navbar nav .options #lastitems a:hover {
+    background-color: #b8f1d2;
+}
+
+/* Body Section Styling */
+.content {
+    padding: 20 px;
+}
+
+/*Section 1*/
+.content #section1 {
+    background-color: #e3f4ff;
+    padding: 50px;
+    margin-bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap:80px;
+    align-items: center;
+}
+.content #section1 q{
+    font-weight: bold;
+    font-size: 35px;
+}
+.content #section1 img{
+    max-width: 100%;
+    height: auto;
+}
+/*Section 2*/
+.content #section2 {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin-bottom: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content #section2 h3{
+    text-align: center;
+    font-size: 2rem;
+    padding: 100px;
+}
+.content #section2 #image1{
+    width:130px;
+    height: 130px;
+}
+.content #section2 #image2{
+    width:130px;
+    height: 130px;
+    margin-left: auto;
+    display: block; 
+}
+/*Section 3*/
+.content .section3 {
+    background-color: #e3f4ff;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin-bottom: 0px;
+    min-height: 600px;
+    width: 100%;
+    gap: 20px;
+}
+.content .section3 .cards{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.content .section3 .cards .card{
+    justify-items: center;
+    align-items: center;
+    width: 409px;
+    height: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+.content .section3 .cards .card .img{
+    width: 100px;
+    height: 100px;
+    border-radius: 40px;
+    padding: 10px;
+}
+.content .section3 .cards .card h3{
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+.content .section3 .cards .card p{
+    line-height: 1.6;
+    text-align:justify;
+    word-spacing: 2px;
+    font-size: 1.1rem;
+    margin:10px ;
+}
+/*Section 4*/
+.section4 {
+    background-color: #ffffff;
+    margin-bottom: 0px;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.section4 h2{
+    padding: 20px;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 20px;
+    width: 50%;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+.panel {
+    padding: 0 18px;
+    font-size: large;
+    background-color: white;
+    width: 50%;
+    margin: 3px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 18px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Footer Section Styling */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    margin-top:auto;
+    width: 100%;
+}
+.footer footer p {
+    font-size: 14px;
+}

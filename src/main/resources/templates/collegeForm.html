@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manara Platform College Form Page</title>
+    <link rel="stylesheet" href="/collegeForm-styles.css">
+
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <div class="navbar">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="/images/logo/logo.png" alt="Website Logo"></a>
+                <h1 class="site-name">Manara Platform</h1>
+            </div>
+            <nav>
+                <ul class="options">
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/colleges}">Colleges</a></li>
+                    <li><a th:href="@{/universities}">Universities</a></li>
+                    <li><a th:href="@{/advisors}">Advisors</a></li>
+                    <li id="lastitems"><a th:href="@{/advisors/advisorForm}">Become Advisor</a></li>
+                    <li id="lastitems"><a th:href="@{/colleges/collegeForm}">Suggest College</a></li>
+                    <li id="lastitems"><a th:href="@{/contactPage/contactUs}">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    
+    <!-- Form Content Section-->
+    <div class="container">
+        <h2>College Suggestion Form</h2>
+        <form action="/colleges/collegeForm" method="post">
+            <label>Name:</label>
+            <input type="text" name="name" required placeholder="Enter the name of the college">
+    
+            <label>Definition:</label>
+            <textarea id="info" name="info" required placeholder="Enter a brief description of the college"></textarea><br>
+    
+            <label>Job Opportunities:</label>
+            <input type="text" name="jobs" required placeholder="List the job opportunities">
+    
+            <label>Readiness Skills:</label>
+            <input type="text" name="skills" required placeholder="List the readiness skills">
+    
+            <button type="submit">Send</button>
+        </form>
+            
+    </div>
+
+    <!-- Footer Section--> 
+    <div class="footer">
+        <footer>
+            <p>&copy; 2025 Manara Platform. All Rights Reserved.</p>
+        </footer>
+    </div> 
+
+</body>
+</html>

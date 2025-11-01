@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manara Platform Universities Page</title>
+    <link rel="stylesheet" href="/universities-styles.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+    <div class="navbar">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="/images/logo/logo.png" alt="Website Logo"></a>
+                <h1 class="site-name">Manara Platform</h1>
+            </div>
+            <nav>
+                <ul class="options">
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/colleges}">Colleges</a></li>
+                    <li><a th:href="@{/universities}">Universities</a></li>
+                    <li><a th:href="@{/advisors}">Advisors</a></li>
+                    <li id="lastitems"><a th:href="@{/advisors/advisorForm}">Become Advisor</a></li>
+                    <li id="lastitems"><a th:href="@{/colleges/collegeForm}">Suggest College</a></li>
+                    <li id="lastitems"><a th:href="@{/contactPage/contactUs}">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    
+    <!-- Universities Section-->
+    <div class="container">
+        <h2>Universities List</h2>
+        <div class="cards-container">
+            <!-- Loop through universities -->
+            <div class="card" th:each="university : ${universities}">
+                <img th:src="@{/universities/{id}/logo(id=${university.id})}" alt="University Logo" class="logo">
+                <h3 th:text="${university.name}"></h3>
+                <a th:href="${university.link}" target="_blank">Visit Website</a>
+            </div>
+        </div>
+        <!-- Pagination Controls -->
+        <div class="pagination" id="pagination">
+            <a href="#" class="prev">Previous</a>
+            <!-- Page numbers will be inserted here by JavaScript -->
+            <a href="#" class="next">Next</a>
+        </div>
+    </div>
+
+    <!-- Footer Section--> 
+    <div class="footer">
+        <footer>
+            <p>&copy; 2025 Manara Platform. All Rights Reserved.</p>
+        </footer>
+    </div> 
+
+    <!-- Pagination Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const itemsPerPage = 12; // Number of cards per page
+            const cards = document.querySelectorAll('.card');
+            const pagination = document.getElementById('pagination');
+            let currentPage = 1;
+    
+            function showPage(page) {
+                cards.forEach((card, index) => {
+                    const pageNumber = Math.ceil((index + 1) / itemsPerPage);
+                    card.style.display = pageNumber === page ? 'block' : 'none';
+                });
+            }
+    
+            function setupPagination() {
+                const pageCount = Math.ceil(cards.length / itemsPerPage);
+                pagination.innerHTML = `
+                    <a href="#" class="prev">Previous</a>
+                    ${Array.from({length: pageCount}, (_, i) => 
+                        `<a href="#" class="page ${i+1 === currentPage ? 'active' : ''}">${i+1}</a>`
+                    ).join('')}
+                    <a href="#" class="next">Next</a>
+                `;
+    
+                pagination.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (e.target.classList.contains('page')) {
+                        currentPage = parseInt(e.target.textContent);
+                    } else if (e.target.classList.contains('prev') && currentPage > 1) {
+                        currentPage--;
+                    } else if (e.target.classList.contains('next') && currentPage < pageCount) {
+                        currentPage++;
+                    }
+                    
+                    showPage(currentPage);
+                    updatePaginationStyles();
+                });
+            }
+    
+            function updatePaginationStyles() {
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.toggle('active', parseInt(page.textContent) === currentPage);
+                });
+            }
+    
+            showPage(currentPage);
+            setupPagination();
+        });
+    </script>
+</body>
+</html>

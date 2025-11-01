@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manara Platform Home Page</title>
+    <link rel="stylesheet" href="index-styles.css">
+
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <div class="navbar">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="/images/logo/logo.png" alt="Website Logo"></a>
+                <h1 class="site-name">Manara Platform</h1>
+            </div>
+            <nav>
+                <ul class="options">
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/colleges}">Colleges</a></li>
+                    <li><a th:href="@{/universities}">Universities</a></li>
+                    <li><a th:href="@{/advisors}">Advisors</a></li>
+                    <li id="lastitems"><a th:href="@{/advisors/advisorForm}">Become Advisor</a></li>
+                    <li id="lastitems"><a th:href="@{/colleges/collegeForm}">Suggest College</a></li>
+                    <li id="lastitems"><a th:href="@{/contactPage/contactUs}">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Body Section -->
+    <div class="content">
+        <main>
+            <!--Section 1-->
+            <section id="section1">
+                <img src="/images/main_images/main_image_1.png" alt="main image 1">
+                <q>Unlock Your Future with Confidence</q>
+            </section>
+            <!--Section 2-->
+            <section id="section2">
+                <img id="image1" src="/images/main_images/main_image_2.gif" alt="main image 2">
+                <h3>Manara Platform – Guiding Your Academic Journey with Expert Advisors</h3>
+                <img id="image2" src="/images/main_images/main_image_3.gif" alt="main image 3">
+            </section>
+            <!--Section 3-->
+            <section class="section3">
+                <div class="cards">
+                    <div class="card">
+                        <img class="img" src="/images/main_images/main_image_4.gif" alt="main image 4">
+                        <h2>Explore Colleges</h2>
+                        <p>Browse through a variety of colleges that align with your career goals. Discover programs, compare institutions, and make informed decisions about your future.</p>
+                    </div>
+                    <div class="card">
+                        <img class="img" src="/images/main_images/main_image_5.gif" alt="main image 5">
+                        <h2>Universities in Saudi Arabia</h2>
+                        <p>Get detailed information about top universities in Saudi Arabia. Learn about admission requirements, offered programs, and campus life to choose the best university for your journey.</p>
+                    </div>
+                    <div class="card">
+                        <img class="img" src="/images/main_images/main_image_6.gif" alt="main image 6">
+                        <h2>Expert Advisors</h2>
+                        <p>Connect with academic advisors who can help you explore different career paths, answer your questions, and provide insights into making the best academic choices.</p>
+                    </div>
+                </div>
+            </section>
+            <!--Section 4-->
+            <section class="section4">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                <button class="accordion">What is Manara Platform for Academic Guidance?</button>
+                <div class="panel">
+                    <p>Manara is a free online platform designed to help students explore different types of colleges and universities in Saudi Arabia. It also provides expert volunteer advisors to guide students in choosing their academic paths.</p>
+                </div>
+                <button class="accordion">Is Manara Platform free to use?</button>
+                <div class="panel">
+                    <p>Yes! Manara is completely free for students and advisors. Our goal is to make academic guidance accessible to everyone.</p>
+                </div>
+                <button class="accordion">Can I get personal advice from an expert?</button>
+                <div class="panel">
+                    <p>Yes! Manara connects students with experienced volunteer advisors who can provide guidance based on your interests and career aspirations.</p>
+                </div>
+                <button class="accordion">How can I register as an advisor?</button>
+                <div class="panel">
+                    <p>If you’re an expert willing to guide students, you can register through our Advisor Registration Form. If accepted, we will contact you for further details.</p>
+                </div>
+                <button class="accordion">What if I can't find a college on the website?</button>
+                <div class="panel">
+                    <p>If a college is missing from our database, you can suggest adding it through our platform. We regularly update our listings to ensure students have access to the most relevant information.</p>
+                </div>
+                <button class="accordion">How do I contact Manara for support?</button>
+                <div class="panel">
+                    <p>If you have any questions or need assistance, you can reach out to us through our contact page</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <footer>
+            <p>&copy; 2025 Manara Platform. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manara Platform Advisor Form Page</title>
+    <link rel="stylesheet" href="/advisorForm-styles.css">
+
+    <!--converts an uploaded image file to Base64 from its binary data (raw file format)-->
+    <script>
+        function convertToBase64(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function () {
+                document.getElementById("logoBase64").value = reader.result.split(",")[1]; // Extract Base64
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <div class="navbar">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="/images/logo/logo.png" alt="Website Logo"></a>
+                <h1 class="site-name">Manara Platform</h1>
+            </div>
+            <nav>
+                <ul class="options">
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/colleges}">Colleges</a></li>
+                    <li><a th:href="@{/universities}">Universities</a></li>
+                    <li><a th:href="@{/advisors}">Advisors</a></li>
+                    <li id="lastitems"><a th:href="@{/advisors/advisorForm}">Become Advisor</a></li>
+                    <li id="lastitems"><a th:href="@{/colleges/collegeForm}">Suggest College</a></li>
+                    <li id="lastitems"><a th:href="@{/contactPage/contactUs}">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    
+    <!-- Form Content Section-->
+    <div class="container">
+        <h2>Advisor Registration Form</h2>
+        <form action="/advisors/advisorForm" method="post">
+            <label>Name:</label>
+            <input type="text" name="name" required placeholder="Enter the advisor's full name">
+    
+            <label>Email:</label>
+            <input type="email" name="email" required placeholder="Enter the advisor's email address">
+    
+            <label>Position:</label>
+            <input type="text" name="position" required placeholder="Enter the advisor's position or title">
+    
+            <label>Upload Logo:</label>
+            <input type="file" id="logo" accept="image/*" onchange="convertToBase64(event)" >
+            <input type="hidden" id="logoBase64" name="logoBase64">
+    
+            <button type="submit">Register</button>
+        </form>
+            
+    </div>
+
+    <!-- Footer Section--> 
+    <div class="footer">
+        <footer>
+            <p>&copy; 2025 Manara Platform. All Rights Reserved.</p>
+        </footer>
+    </div> 
+
+</body>
+</html>
