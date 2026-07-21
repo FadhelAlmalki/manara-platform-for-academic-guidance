@@ -1,15 +1,111 @@
-# manara-platform-for-academic-guidance
-After graduating from high school, many students face confusion when it comes to choosing the right academic path. This uncertainty stems from a lack of knowledge and experience in understanding different academic disciplines, emerging fields, and career opportunities. Students need reliable and expert guidance to help them navigate their way toward selecting the most suitable major and university based on market demands, future career prospects, and their own skills.
+# Manara Platform for Academic Guidance
 
-In today's rapidly evolving academic landscape, selecting the right major and university is crucial as it significantly impacts students' future careers. Manara Platform is designed to be one of the key tools that guide students toward an academic path tailored to their strengths and aligned with industry needs.
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.1-6DB33F?logo=springboot)
+![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=java)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3-005F0F?logo=thymeleaf)
+![Maven](https://img.shields.io/badge/Maven-3-C71A36?logo=apachemaven)
 
-https://github.com/user-attachments/assets/28bb5bf9-4f4e-4d73-8097-c0c3c54a0c68
+## Table of Contents
 
-In Saudi Arabia, there are limited specialized advising tools available to help students make informed decisions about their academic futures. A comprehensive tool is needed to assist students in choosing the right college and university by considering various factors such as their skills, market trends, aspirations, and future opportunities. At the same time, universities require a platform where they can present detailed information about their college and analyze students' skills to match them with potential academic programs.
-Currently, students must visit numerous university websites and educational forums to gather insights into different college, which can be time-consuming and overwhelming. A centralized, specialized platform would streamline this process and provide students with a clearer path toward their future.
+- [About](#about)
+- [Demo](#demo)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Configuration](#configuration)
+  - [Run Locally](#run-locally)
+- [Project Structure](#project-structure)
+- [Pages & Endpoints](#pages--endpoints)
 
-1. Academic College Page: Provide detailed information about different types of colleges available including required skills, and career opportunities post-graduation.
-2. Saudi Universities Page: Offer a comprehensive list of universities in Saudi Arabia, including links to their respective websites.
-3. Academic Advisors Page: Enable students to communicate with academic advisors who can answer their questions and offer guidance.
-4. Add College Page: Allow students to submit new college that are not currently listed on the platform via a submission form.
-5. Advisor Registration Page: Academic advisors can register through submission form voluntarily, offering their expertise and advice to students in the platform.
+## About
+
+Manara helps high school graduates in Saudi Arabia choose the right academic path. It connects students with expert advisors, provides detailed information about colleges and universities, and offers a centralized platform for academic guidance.
+
+![Manara Platform Home](assets/home.png)
+
+## Demo
+
+Watch the full walkthrough: [Senior Project.mp4](assets/Senior%20Project.mp4)
+
+## Features
+
+- **Academic College Page** — browse detailed information about colleges, required skills, and career opportunities.
+- **Saudi Universities Page** — comprehensive list of universities in Saudi Arabia with links to their websites.
+- **Academic Advisors Page** — connect with volunteer advisors who offer expert guidance.
+- **Suggest a College** — submit new colleges not yet listed on the platform.
+- **Become an Advisor** — advisors can register voluntarily to offer their expertise.
+- **Contact Us** — reach out for support or inquiries.
+
+## Tech Stack
+
+| Layer        | Technology                        |
+| ------------ | --------------------------------- |
+| Backend      | Spring Boot 3.4.1, Java 17        |
+| Frontend     | Thymeleaf, HTML, CSS              |
+| Database     | MySQL 8.0                         |
+| ORM          | Spring Data JPA / Hibernate       |
+| Build        | Maven                             |
+| Utilities    | Lombok, Spring DevTools           |
+
+## Getting Started
+
+### Prerequisites
+
+- Java 17+
+- MySQL 8.0+
+- Maven 3+
+
+### Configuration
+
+Copy the example properties file and update with your database credentials:
+
+```bash
+cp src/main/resources/application-example.properties src/main/resources/application.properties
+```
+
+### Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/FadhelAlmalki/manara-platform-for-academic-guidance.git
+cd manara
+
+# Build and run
+./mvnw spring-boot:run
+```
+
+The app starts at `http://localhost:8081`.
+
+## Project Structure
+
+```
+manara/
+├── src/main/java/com/seniorproject/manara/
+│   ├── AdvisorsPage/          # advisor listing
+│   ├── AdvisorFormPage/       # advisor registration form
+│   ├── CollegeFormPage/       # suggest a college form
+│   ├── CollegePage/           # college listing
+│   ├── ContactUsPage/         # contact form
+│   ├── HomePage/              # home controller
+│   └── UniversityPage/        # university listing
+├── src/main/resources/
+│   ├── templates/             # Thymeleaf views
+│   └── application.properties # database & app config
+└── assets/                   # app screenshots and demo
+```
+
+## Pages & Endpoints
+
+| Route                               | Description             |
+| ----------------------------------- | ----------------------- |
+| `/`                                 | Home page               |
+| `/colleges`                         | College listings        |
+| `/universities`                     | University listings     |
+| `/advisors`                         | Advisor listings        |
+| `/advisors/advisorForm`             | Advisor registration    |
+| `/colleges/collegeForm`             | Suggest a college       |
+| `/contactPage/contactUs`            | Contact form            |
+
+

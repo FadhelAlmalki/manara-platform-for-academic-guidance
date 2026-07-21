@@ -16,8 +16,9 @@
                 <a href="/"><img src="/images/logo/logo.png" alt="Website Logo"></a>
                 <h1 class="site-name">Manara Platform</h1>
             </div>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
             <nav>
-                <ul class="options">
+                <ul class="options" id="navMenu">
                     <li><a th:href="@{/}">Home</a></li>
                     <li><a th:href="@{/colleges}">Colleges</a></li>
                     <li><a th:href="@{/universities}">Universities</a></li>
@@ -58,5 +59,10 @@
         </footer>
     </div> 
 
+<script>
+    function toggleMenu() {
+        document.getElementById("navMenu").classList.toggle("show");
+    }
+</script>
 </body>
 </html>

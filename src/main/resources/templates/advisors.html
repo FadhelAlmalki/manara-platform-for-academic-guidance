@@ -15,8 +15,9 @@
                 <a href="/"><img src="/images/logo/logo.png" alt="Website Logo"></a>
                 <h1 class="site-name">Manara Platform</h1>
             </div>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
             <nav>
-                <ul class="options">
+                <ul class="options" id="navMenu">
                     <li><a th:href="@{/}">Home</a></li>
                     <li><a th:href="@{/colleges}">Colleges</a></li>
                     <li><a th:href="@{/universities}">Universities</a></li>
@@ -58,6 +59,9 @@
     </div> 
     <!-- Pagination Script -->
     <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("show");
+        }
         document.addEventListener('DOMContentLoaded', function() {
             const itemsPerPage = 8; // Number of cards per page
             const cards = document.querySelectorAll('.card');
